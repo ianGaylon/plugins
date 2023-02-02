@@ -42,6 +42,10 @@ class InAppPurchase implements InAppPurchasePlatformAdditionProvider {
     return _instance!;
   }
 
+  static void disposeInstance() {
+    _instance = null;
+  }
+
   @override
   T getPlatformAddition<T extends InAppPurchasePlatformAddition?>() {
     return InAppPurchasePlatformAddition.instance as T;
